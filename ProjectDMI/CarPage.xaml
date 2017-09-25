@@ -5,10 +5,59 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProjectDMI"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="600" d:DesignWidth="500"
       Title="CarPage">
-
     <Grid>
-        <TextBlock x:Name="CarText" Text="Car Insurance coming soon!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" />
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock x:Name="Icontext" FontFamily="Segoe MDL2 Assets" Text="&#xE804;" FontSize="20" HorizontalAlignment="Center" />
+            <TextBlock x:Name="CarText" Text="DM Car Insurance" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" />
+        </StackPanel>
+        <StackPanel Margin="10,60,0,0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="PolicyText" Text="Policy start date: " VerticalAlignment="Center"/>
+                <DatePicker x:Name="PolicyDatePicker"></DatePicker>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                <TextBlock x:Name="AddDriverTextBlock" Text="Add a driver to the policy: " VerticalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="DriverNameTextBlock" Text="Name:  " VerticalAlignment="Center"/>
+                    <TextBox x:Name="DriverNameText" Width="150"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <TextBlock x:Name="DriverOccupationTextBlock" Text="Occupation:  " VerticalAlignment="Center"/>
+                    <ComboBox x:Name="DriverOccupationComboBox">
+                        <ComboBoxItem IsSelected="True">Chauffeur</ComboBoxItem>
+                        <ComboBoxItem>Accountant’</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <TextBlock x:Name="DriverDOBTextBlock" Text="Date of Birth:  " VerticalAlignment="Center"/>
+                    <DatePicker x:Name="DriverDOBDatePicker" Width="150"></DatePicker>
+                    <Button x:Name="CreatePolicy" Content="Create Policy" Click="CreatePolicy_Click"></Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,40,0,0">
+                    <StackPanel HorizontalAlignment="Left">
+                        <TextBlock Text="List of Drivers:" Margin="0,5,0,0"></TextBlock>
+                        <ListBox x:Name="DriverListBox" Height="100" Width="100" Margin="0,1,0,0" SelectionChanged="DriverListBox_SelectionChanged"/>
+                        <Button x:Name="AddDriverbutton" Content="Additional Driver" Click="AddDriverbutton_Click" Width="100" Margin="0,5,0,0" HorizontalContentAlignment="Center"></Button>
+
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Left" Margin="30,0,0,0">
+                        <TextBlock Text="List of claims:" Margin="0,5,0,0"></TextBlock>
+                        <ListBox x:Name="ClaimListBox" Height="100" Width="100" Margin="0,1,0,0" SelectionChanged="DriverListBox_SelectionChanged"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,15,0,0" HorizontalAlignment="Right">
+                    <TextBlock x:Name="Claim1TextBlock" Text="**OPTIONAL** Add a claim for: " VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                    <TextBlock x:Name="Claim2TextBlock" Width="150"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0" HorizontalAlignment="Right">
+                    <TextBlock x:Name="Claim3TextBlock" Text="Date of Claim: " VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                    <DatePicker x:Name="ClaimDatePicker" Width="150"></DatePicker>
+                    <Button x:Name="AddClaimbutton" Content="Add Claim" Width="100" Margin="5,0,0,0" VerticalAlignment="Center" Click="AddClaimbutton_Click"></Button>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

@@ -54,9 +54,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Claims.cs" />
+    <Compile Include="Driver.cs" />
     <Compile Include="HolidayPage.xaml.cs">
       <DependentUpon>HolidayPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Policy.cs" />
     <Compile Include="VanPage.xaml.cs">
       <DependentUpon>VanPage.xaml</DependentUpon>
     </Compile>

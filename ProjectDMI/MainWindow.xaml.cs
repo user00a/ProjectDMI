@@ -29,5 +29,10 @@ namespace ProjectDMI
         {
             MainFrame.Content = new HomePage();
         }
+
+        private void CarButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new CarPage();
+        }
     }
 }
